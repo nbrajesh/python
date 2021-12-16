@@ -1,4 +1,6 @@
 # python
-first we need to install PyPDF2 using pip command 
+pip install PyPDF2
+pip install xlwings
 
-open cmd-> pip install PyPDF2.
+# START THE APPLICATION
+xlwings quickstart pdfmerger --standalone

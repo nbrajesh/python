@@ -1,0 +1,20 @@
+Sub
+SelectFolder()
+
+Dim folder_path As String
+Dim wb As Workbook
+Dim ws As Worksheet
+Set wb = ThisWorkbook
+Set ws = wb.Sheets(&quot;Sheet1&quot;)
+&#39; Open the select folder prompt
+With Application.FileDialog(msoFileDialogFolderPicker)
+.Title = &quot;Choose a Folder&quot;
+.AllowMultiSelect = False
+If .Show = True Then
+folder_path = .SelectedItems(1)
+End If
+End With
+If folder_path &lt;&gt; &quot;&quot; Then &#39; if a file was chosen
+ws.Range(&quot;source_dir&quot;).Value = folder_path
+End If
+End Sub
